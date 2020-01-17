@@ -1,5 +1,7 @@
 # swingnodetest
 
+This litte test illustrates an issue with JavaFX Swing Node on macOS. See a corresponding [stackoverflow question](https://stackoverflow.com/questions/59788199/swingnode-shows-blank-window-on-macos-with-jdk-11-0-6-and-other-but-not-with-j).
+
 Run the test via
 ```
 mvn exec:java
