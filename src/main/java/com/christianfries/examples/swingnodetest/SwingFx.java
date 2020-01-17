@@ -15,28 +15,30 @@ import javafx.stage.Stage;
  */
 public class SwingFx extends Application {
 
-    @Override
-    public void start(Stage stage) {
-        final SwingNode swingNode = new SwingNode();
-        createAndSetSwingContent(swingNode);
+	@Override
+	public void start(Stage stage) {
+		System.out.println("JavaFX version: " + com.sun.javafx.runtime.VersionInfo.getRuntimeVersion());
 
-        StackPane pane = new StackPane();
-        pane.getChildren().add(swingNode);
+		final SwingNode swingNode = new SwingNode();
+		createAndSetSwingContent(swingNode);
 
-        stage.setScene(new Scene(pane, 100, 50));
-        stage.show();
-    }
+		StackPane pane = new StackPane();
+		pane.getChildren().add(swingNode);
 
-    private void createAndSetSwingContent(final SwingNode swingNode) {
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                swingNode.setContent(new JButton("Click me!"));
-            }
-        });
-    }
+		stage.setScene(new Scene(pane, 100, 50));
+		stage.show();
+	}
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+	private void createAndSetSwingContent(final SwingNode swingNode) {
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				swingNode.setContent(new JButton("Click me!"));
+			}
+		});
+	}
+
+	public static void main(String[] args) {
+		launch(args);
+	}
 }
